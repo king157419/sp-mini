@@ -1,0 +1,14 @@
+# 运行环境与运行期文件
+.venv/
+.webview/
+__pycache__/
+*.log
+last_poll.txt
+config.json
+# 旧版本备份
+_*.bak*
+# 代理工具本机状态
+.omx/
+.omc/
+.env
+.env.*

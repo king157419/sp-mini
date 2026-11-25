@@ -1,0 +1,92 @@
+/* 纸墨皮肤：暖白纸色、细线、朱砂红强调；正文思源黑体，标题思源宋体。和周历小窗、平面视图的「纸墨」一致。
+   装法：复制到 %APPDATA%\superProductivity\styles.css，保存后立即生效；删掉文件即恢复原样。 */
+
+body {
+  --surface-0: #ECE9E2;
+  --surface-1: #F3F1EC;
+  --surface-2: #FBFAF7;
+  --surface-3: #FBFAF7;
+  --surface-4: #FFFFFF;
+  --ink-strong: #111110;
+  --ink: #1D1C1A;
+  --ink-muted: rgba(29, 28, 26, 0.56);
+  --separator: #E7E3DB;
+  --divider: #E7E3DB;
+  --brand: #B8452F;
+  --palette-primary-400: #CC6A55;
+  --palette-primary-500: #B8452F;
+  --palette-primary-600: #9E3825;
+  --bg-overlay: rgba(243, 241, 236, 0.88);
+  --task-border-radius: 6px;
+  --card-border-radius: 8px;
+  --task-shadow: 0 0 0 1px #E7E3DB;
+  --font-primary-stack: "Noto Sans SC", "Microsoft YaHei UI", sans-serif;
+  --font-serif-stack: "Noto Serif SC", "Noto Serif", serif;
+}
+
+body.isDarkTheme {
+  --surface-0: #141311;
+  --surface-1: #1A1917;
+  --surface-2: #21201D;
+  --surface-3: #282622;
+  --surface-4: #2F2D29;
+  --ink-strong: #FFFFFF;
+  --ink: #E9E5DD;
+  --ink-muted: rgba(233, 229, 221, 0.6);
+  --separator: #2F2D29;
+  --divider: #2F2D29;
+  --brand: #E07A5F;
+  --palette-primary-400: #E99680;
+  --palette-primary-500: #E07A5F;
+  --palette-primary-600: #C9634A;
+  --bg-overlay: rgba(26, 25, 23, 0.88);
+  --task-shadow: 0 0 0 1px #2F2D29;
+}
+
+body,
+button,
+input,
+textarea {
+  font-family: var(--font-primary-stack);
+}
+body { font-weight: 430; letter-spacing: .01em; }
+
+/* 标题、日期用思源宋体 */
+h1, h2, h3, .page-title, .day-title, planner-day .day-title, work-context-title, .current-work-context-title {
+  font-family: var(--font-serif-stack) !important;
+  letter-spacing: .02em;
+}
+
+/* 任务卡片之间留一点缝，看起来不那么挤 */
+task {
+  margin-bottom: 4px;
+}
+
+/* ---- 周计划（Planner）：每天一张卡片，今天描一圈强调色，去掉"已计划 0m / 可用 8h"这行 ---- */
+planner-day {
+  background: var(--surface-2) !important;
+  border: 1px solid var(--separator) !important;
+  border-radius: 8px !important;
+  padding: 2px 10px 20px !important;
+  margin-bottom: 8px !important;
+  min-height: 300px;
+  box-shadow: none;
+}
+planner-day:has(.day-title mat-icon) {
+  border-color: var(--brand) !important;
+  box-shadow: 0 0 0 1px var(--brand);
+}
+planner-day .day-title {
+  justify-content: flex-start !important;
+  font-size: 15px !important;
+}
+planner-day:has(.day-title mat-icon) .day-title {
+  color: var(--brand);
+}
+planner-day .day-counts .day-load {
+  display: none !important;
+}
+planner-day header {
+  border-bottom: 1px solid var(--separator);
+  margin-bottom: 6px;
+}
